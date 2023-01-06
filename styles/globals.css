@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'SF-Mono';
+  src: url('../assets/fonts/SFMono-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'CalibreBlack';
+  src: url('../assets/fonts/CalibreBlack.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'CalibreBold';
+  src: url('../assets/fonts/CalibreBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'CalibreLight';
+  src: url('../assets/fonts/CalibreLight.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'CalibreMedium';
+  src: url('../assets/fonts/CalibreMedium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'CalibreRegular';
+  src: url('../assets/fonts/CalibreRegular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'CalibreSemibold';
+  src: url('../assets/fonts/CalibreSemibold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'CalibreThin';
+  src: url('../assets/fonts/CalibreThin.otf') format('opentype');
+}
+
+html {
+  scroll-behavior: smooth !important;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  background: #0a192f;
+  overflow-x: hidden !important;
+}
+
+@layer base {
+  .line-hover {
+    @apply relative after:content-[''] after:absolute after:z-10 after:left-0 after:bottom-0 after:h-[0.5px] after:w-0 hover:after:w-full after:bg-primary after:transition-all after:ease-in-out after:duration-300;
+  }
+  .footer-line {
+    @apply after:h-[90px] after:w-px after:mx-auto after:my-0 after:block after:bg-icon-color;
+  }
+}
+
+@layer utilities {
+  .arrow-indicator {
+    @apply relative before:absolute before:left-0 before:text-primary before:text-[10px] before:leading-3 before:content-['▹'] flex items-center;
+  }
+}
+
+.tab-scrollbar::-webkit-scrollbar {
+  padding-bottom: 1px;
+}
+
+.text-vertical {
+  text-orientation: sideways-right;
+  writing-mode: vertical-lr;
+}
